@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Combustível</title>
+</h:head>
+<h:body>
+	<h1>Qual Combustível?</h1>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Preço Etanol" for="etanol" />
+			<h:inputText value="#{combustivelBean.combustivel.etanol}"
+				id="etanol" required="true" />
+			<h:message for="etanol" />
+
+			<h:outputLabel value="Preço Gasolina" for="gasolina" />
+			<h:inputText value="#{combustivelBean.combustivel.gasolina}"
+				id="gasolina" required="true" />
+			<h:message for="gasolina" />
+
+
+		</h:panelGrid>
+		<h:outputText value="#{combustivelBean.mensagem}"
+			rendered="#{not empty combustivelBean.mensagem}" /><br/>
+		<h:commandButton value="Calcular" action="#{combustivelBean.calcular}" />
+	</h:form>
+</h:body>
+</html>
